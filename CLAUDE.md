@@ -28,10 +28,21 @@ This is a GitHub Profile Repository (madanzo/madanzo) that serves as both a prof
 ### React Projects (Nenes del Perreo)
 ```bash
 cd projects/nenes-del-perreo
-npm start                    # Start development server
-npm run build               # Build for production
-npm test                    # Run tests
-npm run deploy              # Deploy to GitHub Pages
+npm install                 # Install dependencies
+npm start                   # Start development server (http://localhost:3000)
+npm run build              # Build for production
+npm test                   # Run tests
+npm run deploy             # Deploy to GitHub Pages
+```
+
+### Mobile Development Workflow
+```bash
+# After making mobile responsiveness changes
+npm run build              # Test build process
+npm run deploy             # Deploy to GitHub Pages
+git add src/ package.json public/  # Stage source files only (exclude node_modules)
+git commit -m "Mobile fixes: [description]"
+git push origin main       # Push to repository
 ```
 
 ### System Setup
@@ -88,8 +99,10 @@ sqlite3 data/analytics.db                    # Access local analytics database
 ### React Project Structure (Nenes del Perreo)
 - Uses React 18 with React Router v6
 - Configured for GitHub Pages deployment
-- Mobile-first responsive design
+- **Mobile-first responsive design** with hamburger navigation
 - Component-based architecture in `src/pages/`
+- **Responsive breakpoints**: 768px (tablet), 480px (mobile), 320px (small mobile)
+- **Touch-optimized**: 44px minimum touch targets for mobile usability
 
 ### Database Schema (Kravings Club)
 - PostgreSQL with UUID primary keys
@@ -199,6 +212,8 @@ sqlite3 data/analytics.db ".tables"  # List tables
 2. **Database Connection Error**: Ensure PostgreSQL service is running
 3. **GitHub Stats Not Updating**: APIs are cached, wait 15 minutes
 4. **React Build Fails**: Check Node.js version compatibility
+5. **Mobile Site Issues**: Test responsive breakpoints, check touch targets (44px min)
+6. **Deployment Fails**: Ensure node_modules excluded from git commits
 
 ### System Requirements
 - Node.js v18+ for React development
