@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a GitHub Profile Repository (madanzo/madanzo) that serves as both a professional profile showcase and business automation command center. The repository showcases expertise as a Full-Stack Developer, Digital Marketing Pioneer, and Creative Technologist while housing comprehensive business project documentation and MCP automation systems.
+This is a GitHub Profile Repository (madanzo/madanzo) that serves as both a professional profile showcase and business automation command center. The repository showcases expertise as a Full-Stack Developer, Digital Marketing Pioneer, and Creative Technologist while housing comprehensive business project documentation and a fully functional React music showcase application.
 
 ## Architecture & Key Components
 
@@ -14,14 +14,17 @@ This is a GitHub Profile Repository (madanzo/madanzo) that serves as both a prof
 - Features tech stack, current ventures (Kravings Club, Merkad Agency), and contact info
 
 ### Business Project Structure
-- `projects/kravings/` - Cannabis business platform (replacing Blaze + GoHighLevel + WordPress)
-- `projects/nenes-del-perreo/` - React music showcase application
-- Each project has comprehensive documentation including architecture and MVP features
+- `projects/nenes-del-perreo/` - **Production React music showcase** (deployed to GitHub Pages)
+  - Mobile-responsive design with hamburger navigation
+  - React 18 + React Router v6 architecture
+  - Touch-optimized interface with 44px minimum touch targets
+  - Comprehensive responsive breakpoints (768px, 480px, 320px)
+  - Uses HashRouter for GitHub Pages compatibility
 
-### MCP Automation System
-- `config/` directory contains Claude Desktop MCP server configurations
-- 7 configured MCP servers: GitHub, PostgreSQL, SQLite, Brave Search, Web Search, Memory, Fetch
-- Enables automation of GitHub updates, database management, and SEO research
+### Additional Project Variants
+- `nenes-del-perreo-check/` - Vite + React + TypeScript + ShadCN UI implementation
+- `perreo-texas-vibes/` - Vite + React + TypeScript variant
+- `perreo-texas-vibes-main/` - Extended Vite version with UI components library
 
 ## Common Development Commands
 
@@ -31,9 +34,13 @@ cd projects/nenes-del-perreo
 npm install                 # Install dependencies
 npm start                   # Start development server (http://localhost:3000)
 npm run build              # Build for production
-npm test                   # Run tests
-npm run deploy             # Deploy to GitHub Pages
+npm test                   # Run Jest test suite
+npm run deploy             # Deploy to GitHub Pages (requires gh-pages package)
 ```
+
+**Live URLs:**
+- Development: http://localhost:3000 (when running `npm start`)
+- Production: https://madanzo.github.io/nenes-del-perreo/
 
 ### Mobile Development Workflow
 ```bash
@@ -45,77 +52,87 @@ git commit -m "Mobile fixes: [description]"
 git push origin main       # Push to repository
 ```
 
-### System Setup
+### Vite + TypeScript Projects
 ```bash
-chmod +x setup-dependencies.sh
-./setup-dependencies.sh     # Install all dependencies and setup databases
-./update-api-keys.sh        # Update MCP API keys (after manual key input)
+# For nenes-del-perreo-check, perreo-texas-vibes, perreo-texas-vibes-main
+cd nenes-del-perreo-check   # or other Vite project
+npm install                  # Install dependencies
+npm run dev                  # Start dev server (http://localhost:5173)
+npm run build               # TypeScript check + production build
+npm run preview             # Preview production build
+npm run lint                # Run ESLint
 ```
 
-### Database Operations
+### Git Repository Management
 ```bash
-# PostgreSQL (for Kravings Club)
-psql -d kravings_dev -c 'SELECT version();'  # Test connection
-sudo service postgresql start                # Start PostgreSQL service
+# Exclude node_modules from commits (very important)
+git add src/ package.json public/ README.md  # Stage source files only
+git commit -m "Description of changes"
+git push origin main
 
-# SQLite (for local analytics)
-sqlite3 data/analytics.db                    # Access local analytics database
+# For React projects specifically
+cd projects/nenes-del-perreo
+git add . --exclude=node_modules --exclude=build
 ```
 
-## Business Context & Project Goals
+## Current Project: Nenes del Perreo React Application
 
-### Kravings Club - All-in-One Cannabis Platform
-**Problem**: Currently using multiple expensive platforms (Blaze, GoHighLevel, WordPress) costing ~$2000+/month
-**Solution**: Custom-built platform with Next.js, TypeScript, PostgreSQL
-**Key Features**: E-commerce, CRM, compliance, analytics, customer management
-**Architecture**: See `projects/kravings/PROJECT_ARCHITECTURE.md` for detailed technical specs
+### Application Architecture
+**Framework**: React 18 with Create React App
+**Routing**: React Router v6 with HashRouter (required for GitHub Pages)
+**Styling**: Custom CSS with mobile-first responsive design
+**State Management**: React useState for mobile menu functionality
+**Deployment**: GitHub Pages with automated deployment via gh-pages package
 
-### Merkad Agency - Digital Marketing Automation
-**Services**: SEO with Atlas SEO AI, CRM management, WordPress hosting
-**Automation Goal**: Reduce manual work by 80% through MCP integrations
-**Tools**: GoHighLevel, Atlas SEO AI, competitive analysis automation
+### Mobile-First Design Implementation
+- **Responsive Navigation**: Hamburger menu for mobile devices (≤480px)
+- **Touch Optimization**: 44px minimum touch targets following accessibility guidelines
+- **Breakpoint Strategy**: 768px (tablet), 480px (mobile), 320px (small mobile)
+- **Performance**: Uses CSS transforms and backdrop-filter for smooth animations
 
 ## Development Workflow
 
-### Profile Updates
+### React Development Process
+1. **Start Development**: `cd projects/nenes-del-perreo && npm start`
+2. **Code Changes**: Edit files in `src/` directory
+3. **Test Mobile**: Use browser dev tools to test responsive breakpoints
+4. **Build & Deploy**: `npm run build && npm run deploy`
+5. **Verify Deployment**: Check https://madanzo.github.io/nenes-del-perreo/
+
+### Profile Updates (README.md)
 1. Edit `README.md` for immediate profile changes
 2. Use dynamic GitHub stats APIs for live data
 3. Update tech stack badges when learning new technologies
 4. Maintain professional presentation while showcasing technical depth
 
-### MCP Server Management
-1. Configure API keys in `config/claude_desktop_config.json` and `config/claude_desktop_config_mac.json`
-2. Restart Claude Desktop after configuration changes
-3. Test connections with simple queries before complex operations
-4. Monitor API usage limits for external services
-
-### Database Development
-- **Kravings Dev**: `kravings_dev` PostgreSQL database for local development
-- **Merkad Dev**: `merkad_dev` PostgreSQL database for agency tools
-- **Analytics**: SQLite database in `data/` directory for local analytics
-
 ## Key Technical Decisions
 
-### React Project Structure (Nenes del Perreo)
-- Uses React 18 with React Router v6
-- Configured for GitHub Pages deployment
-- **Mobile-first responsive design** with hamburger navigation
-- Component-based architecture in `src/pages/`
-- **Responsive breakpoints**: 768px (tablet), 480px (mobile), 320px (small mobile)
-- **Touch-optimized**: 44px minimum touch targets for mobile usability
+### React Project Structure (Nenes del Perreo - Production)
+**Component Architecture:**
+- `App.js` - Main component with routing and mobile navigation state
+- `pages/` - Route components (Home, Music, About, Events)
+- `App.css` - Global styles with comprehensive mobile responsive design
+- `index.js` - React DOM rendering entry point
 
-### Database Schema (Kravings Club)
-- PostgreSQL with UUID primary keys
-- Cannabis-compliant user verification system
-- Order tracking with delivery status
-- Loyalty points and customer segmentation
-- Marketing campaign automation
+**Key Implementation Details:**
+- **HashRouter**: Required for GitHub Pages deployment (handles client-side routing)
+- **Mobile State Management**: `useState` for hamburger menu toggle functionality
+- **CSS Architecture**: Mobile-first approach with progressive enhancement
+- **Accessibility**: WCAG-compliant touch targets and keyboard navigation support
+- **Performance**: CSS-only animations, no external animation libraries
 
-### MCP Integration Strategy
-- GitHub MCP for profile automation
-- PostgreSQL MCP for database operations
-- Brave Search MCP for SEO research
-- Memory MCP for persistent context across sessions
+### Vite TypeScript Projects Architecture
+**Tech Stack:**
+- **Build Tool**: Vite (fast HMR, optimized production builds)
+- **Language**: TypeScript for type safety
+- **Framework**: React 18/19
+- **Styling**: Tailwind CSS for utility-first styling
+- **UI Components**: 
+  - ShadCN UI (nenes-del-perreo-check) - Radix UI primitives + Tailwind
+  - Custom components with Radix UI (perreo-texas-vibes variants)
+- **Forms**: React Hook Form for form validation
+- **Charts**: Recharts for data visualization
+- **Icons**: Lucide React for consistent iconography
 
 ## Directory Structure
 
@@ -123,26 +140,26 @@ sqlite3 data/analytics.db                    # Access local analytics database
 /workspaces/madanzo/
 ├── README.md                    # GitHub profile display (public-facing)
 ├── CLAUDE.md                   # This file - guidance for Claude Code
-├── PROJECT_OVERVIEW.md         # Comprehensive business system explanation
-├── setup-dependencies.sh       # System setup automation script
-├── update-api-keys.sh          # MCP API key configuration script
-├── data/                       # Local databases and analytics
-├── config/                     # MCP server configurations
-│   ├── claude_desktop_config.json     # Linux/Windows MCP setup
-│   ├── claude_desktop_config_mac.json # macOS MCP setup
-│   └── MCP_SETUP_GUIDE.md             # MCP configuration instructions
-└── projects/                   # Business project documentation
-    ├── kravings/               # Cannabis platform project
-    │   ├── README.md           # Project overview
-    │   ├── MVP_FEATURES.md     # Feature specifications
-    │   └── PROJECT_ARCHITECTURE.md # Technical architecture
-    └── nenes-del-perreo/       # React music showcase
-        ├── package.json        # React project config
-        ├── public/             # Static assets
-        └── src/                # React source code
-            ├── App.js          # Main component
-            ├── index.js        # Entry point
-            └── pages/          # Page components
+├── assets/images/              # Profile images and assets
+├── data/                       # Local data storage
+├── projects/                   # Project implementations
+│   └── nenes-del-perreo/       # React music showcase application (PRODUCTION)
+│       ├── package.json        # Dependencies: React 18, React Router v6, gh-pages
+│       ├── public/             # Static assets and index.html
+│       ├── src/                # React source code
+│       │   ├── App.js          # Main component with mobile navigation
+│       │   ├── App.css         # Responsive styles (768px, 480px, 320px breakpoints)
+│       │   └── pages/          # Route components
+│       └── build/              # Production build output (auto-generated)
+├── nenes-del-perreo-check/     # Vite + React + TypeScript + ShadCN UI
+│   ├── src/
+│   │   ├── components/ui/      # ShadCN UI components
+│   │   └── lib/utils.ts        # Utility functions
+│   └── tailwind.config.js      # Tailwind CSS configuration
+├── perreo-texas-vibes/         # Vite + React + TypeScript variant
+│   └── src/
+│       └── components/         # Custom React components
+└── perreo-texas-vibes-main/    # Extended Vite version with UI library
 ```
 
 ## Testing & Quality Assurance
@@ -154,40 +171,38 @@ npm test                        # Run Jest test suite
 npm test -- --coverage         # Run tests with coverage report
 ```
 
-### Database Testing
+### Mobile Responsiveness Testing
 ```bash
-# Test PostgreSQL connection
-psql -d kravings_dev -c '\l'    # List databases
-psql -d merkad_dev -c '\dt'     # List tables
+# Test responsive design
+npm start  # Start dev server
+# Use browser dev tools to test:
+# - Desktop (1200px+): Horizontal navigation
+# - Tablet (768px): Optimized spacing
+# - Mobile (480px): Hamburger menu
+# - Small mobile (320px): Compact layout
 
-# Test SQLite
-sqlite3 data/analytics.db ".tables"  # List tables
+# Verify touch targets
+# All interactive elements should be minimum 44px for mobile accessibility
 ```
-
-### MCP Server Testing
-1. GitHub MCP: Try basic repository queries
-2. Database MCPs: Test simple SELECT queries
-3. Search MCPs: Verify API key functionality
-4. Memory MCP: Test context persistence
 
 ## Important Development Notes
 
-### Security & Compliance
-- Cannabis industry requires strict compliance tracking
-- All user data must be encrypted and audit-logged
-- Age verification is mandatory for all users
-- Purchase limits must be enforced by law
+### Git Best Practices
+- **Never commit node_modules**: Always excluded from git commits for performance
+- **Staging files**: Use `git add src/ package.json public/` for React projects
+- **Build artifacts**: The `build/` directory is auto-generated, don't manually edit
+- **Package lock**: Commit `package-lock.json` for dependency consistency
 
-### Performance Considerations
-- GitHub profile stats are cached (~15 minutes)
-- Database queries should use proper indexing
-- Images should be optimized for web delivery
-- API calls should be rate-limited
+### Deployment Considerations
+- **GitHub Pages**: Uses HashRouter for client-side routing compatibility
+- **Cache**: GitHub Pages has ~10 minute deployment propagation time
+- **HTTPS**: All external resources must use HTTPS (GitHub Pages requirement)
+- **Base URL**: Homepage setting in package.json must match repository name
 
-### Business Constraints
-- **Kravings Club**: Must integrate with Weedmaps, comply with state regulations
-- **Merkad Agency**: Client data confidentiality is paramount
-- **Profile**: Maintain professional image while showcasing technical depth
+### Performance Optimization
+- **Mobile-first CSS**: Smaller mobile styles load first, desktop styles enhance
+- **Responsive images**: Consider different sizes for different viewport widths  
+- **Bundle size**: React build automatically optimizes and minimizes CSS/JS
 
 ## Common Profile Maintenance Tasks
 
@@ -214,9 +229,35 @@ sqlite3 data/analytics.db ".tables"  # List tables
 4. **React Build Fails**: Check Node.js version compatibility
 5. **Mobile Site Issues**: Test responsive breakpoints, check touch targets (44px min)
 6. **Deployment Fails**: Ensure node_modules excluded from git commits
+7. **Docker MCP Timeout Issues**: See Docker MCP section below
+
+### Docker MCP Service Timeouts
+If the MCP Docker service fails with timeout errors when pulling images:
+
+1. **Quick Fix - Run the pre-pull script**:
+   ```bash
+   cd /workspaces/madanzo/scripts
+   ./docker-mcp-pull.sh
+   ```
+
+2. **Manual Alternative**:
+   ```bash
+   docker pull mcp/fetch
+   docker pull mcp/github-mcp-server
+   docker pull mcp/google-maps
+   docker pull mcp/puppeteer
+   ```
+
+3. **Verify Images**:
+   ```bash
+   docker images | grep mcp
+   ```
+
+For detailed troubleshooting, see: `docs/DOCKER_MCP_TROUBLESHOOTING.md`
 
 ### System Requirements
 - Node.js v18+ for React development
 - PostgreSQL 13+ for database operations
 - Python 3.8+ for analytics scripts
 - Git for version control
+- Docker Desktop (for MCP Docker services)

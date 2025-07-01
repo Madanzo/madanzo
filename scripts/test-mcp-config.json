@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "test-echo": {
+      "command": "/bin/echo",
+      "args": ["MCP Connection Test Successful"]
+    },
+    "filesystem": {
+      "command": "/home/codespace/nvm/current/bin/npx",
+      "args": ["@modelcontextprotocol/server-filesystem"],
+      "env": {
+        "ALLOWED_DIRECTORIES": ["/workspaces/madanzo"],
+        "PATH": "/home/codespace/nvm/current/bin:/usr/local/bin:/usr/bin:/bin"
+      }
+    },
+    "desktop-commander": {
+      "command": "/home/codespace/nvm/current/bin/npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@wonderwhy-er/desktop-commander",
+        "--key",
+        "772180de-b91e-4b7e-a65c-5f38caa2c06f"
+      ],
+      "env": {
+        "PATH": "/home/codespace/nvm/current/bin:/usr/local/bin:/usr/bin:/bin",
+        "HOME": "/home/codespace",
+        "USER": "codespace"
+      }
+    }
+  }
+}
