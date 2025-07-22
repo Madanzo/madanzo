@@ -1,0 +1,26 @@
+name: Claude Code
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+  pull_request:
+    types: [opened, edited, synchronize]
+  pull_request_review_comment:
+    types: [created, edited]
+
+jobs:
+  claude-code:
+    if: |
+      (
+        github.event_name == 'issues' && contains(github.event.issue.body, 'hey claude') ||
+        github.event_name == 'issue_comment' && contains(github.event.comment.body, 'hey claude') ||
+        github.event_name == 'pull_request' && contains(github.event.pull_request.body, 'hey claude') ||
+        github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, 'hey claude')
+      )
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          api_key: ${{ secrets.ANTHROPIC_API_KEY }}
