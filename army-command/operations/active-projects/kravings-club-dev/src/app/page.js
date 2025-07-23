@@ -30,7 +30,7 @@ export default function HomePage() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-white text-xl">Loading...</div>
+        <div className="text-white text-xl">Loading Kravings Club...</div>
       </div>
     );
   }
