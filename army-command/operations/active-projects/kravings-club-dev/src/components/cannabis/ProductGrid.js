@@ -15,13 +15,18 @@ export default function ProductGrid() {
     { id: 'all', name: 'All Products' },
     { id: 'flower', name: 'Flower' },
     { id: 'edibles', name: 'Edibles' },
-    { id: 'vapes', name: 'Vapes' },
-    { id: 'concentrates', name: 'Concentrates' }
+    { id: 'concentrates', name: 'Concentrates' },
+    { id: 'prerolls', name: 'Pre-Rolls' },
+    { id: 'vapes', name: 'Vape Cartridges' },
+    { id: 'vapepens', name: 'Vape Pens' },
+    { id: 'drinks', name: 'Drinks' },
+    { id: 'accessories', name: 'Accessories' }
   ];
 
   useEffect(() => {
     // Sample products (replace with WordPress API data)
     const sampleProducts = [
+      // Flower
       {
         id: 1,
         name: 'Girl Scout Cookies',
@@ -46,6 +51,18 @@ export default function ProductGrid() {
       },
       {
         id: 3,
+        name: 'OG Kush',
+        category: 'flower',
+        price: 50,
+        thc: 24.1,
+        type: 'Indica',
+        image: '/api/placeholder/300/300',
+        rating: 4.9,
+        reviews: 201
+      },
+      // Edibles
+      {
+        id: 4,
         name: 'Sour Gummies',
         category: 'edibles',
         price: 25,
@@ -56,15 +73,142 @@ export default function ProductGrid() {
         reviews: 156
       },
       {
-        id: 4,
+        id: 5,
+        name: 'Chocolate Brownies',
+        category: 'edibles',
+        price: 30,
+        thc: 100,
+        type: 'Edible',
+        image: '/api/placeholder/300/300',
+        rating: 4.7,
+        reviews: 93
+      },
+      // Concentrates
+      {
+        id: 6,
+        name: 'Live Rosin',
+        category: 'concentrates',
+        price: 75,
+        thc: 82.3,
+        type: 'Concentrate',
+        image: '/api/placeholder/300/300',
+        rating: 4.8,
+        reviews: 67
+      },
+      {
+        id: 7,
+        name: 'Shatter',
+        category: 'concentrates',
+        price: 40,
+        thc: 78.9,
+        type: 'Concentrate',
+        image: '/api/placeholder/300/300',
+        rating: 4.6,
+        reviews: 45
+      },
+      // Pre-Rolls
+      {
+        id: 8,
+        name: 'Infused Pre-Roll',
+        category: 'prerolls',
+        price: 20,
+        thc: 35.2,
+        type: 'Pre-Roll',
+        image: '/api/placeholder/300/300',
+        rating: 4.8,
+        reviews: 112
+      },
+      {
+        id: 9,
+        name: '3-Pack Joints',
+        category: 'prerolls',
+        price: 35,
+        thc: 22.1,
+        type: 'Pre-Roll',
+        image: '/api/placeholder/300/300',
+        rating: 4.5,
+        reviews: 78
+      },
+      // Vape Cartridges
+      {
+        id: 10,
         name: 'Live Resin Cart',
         category: 'vapes',
         price: 55,
         thc: 85.4,
-        type: 'Vape',
+        type: 'Vape Cart',
         image: '/api/placeholder/300/300',
         rating: 4.6,
         reviews: 78
+      },
+      {
+        id: 11,
+        name: 'Distillate Cartridge',
+        category: 'vapes',
+        price: 45,
+        thc: 88.7,
+        type: 'Vape Cart',
+        image: '/api/placeholder/300/300',
+        rating: 4.4,
+        reviews: 92
+      },
+      // Vape Pens
+      {
+        id: 12,
+        name: 'Disposable Vape Pen',
+        category: 'vapepens',
+        price: 35,
+        thc: 78.5,
+        type: 'Disposable',
+        image: '/api/placeholder/300/300',
+        rating: 4.3,
+        reviews: 134
+      },
+      // Drinks
+      {
+        id: 13,
+        name: 'Cannabis Soda',
+        category: 'drinks',
+        price: 15,
+        thc: 5,
+        type: 'Beverage',
+        image: '/api/placeholder/300/300',
+        rating: 4.2,
+        reviews: 56
+      },
+      {
+        id: 14,
+        name: 'THC Lemonade',
+        category: 'drinks',
+        price: 18,
+        thc: 10,
+        type: 'Beverage',
+        image: '/api/placeholder/300/300',
+        rating: 4.6,
+        reviews: 73
+      },
+      // Accessories
+      {
+        id: 15,
+        name: 'Glass Pipe',
+        category: 'accessories',
+        price: 25,
+        thc: 0,
+        type: 'Accessory',
+        image: '/api/placeholder/300/300',
+        rating: 4.5,
+        reviews: 41
+      },
+      {
+        id: 16,
+        name: 'Rolling Papers',
+        category: 'accessories',
+        price: 8,
+        thc: 0,
+        type: 'Accessory',
+        image: '/api/placeholder/300/300',
+        rating: 4.7,
+        reviews: 89
       }
     ];
 

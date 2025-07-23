@@ -3,20 +3,20 @@
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
 
   const quickLinks = [
     { name: 'Products', href: '/products' },
     { name: 'About Us', href: '/about' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
     { name: 'FAQ', href: '/faq' }
   ];
 
   const legalLinks = [
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Delivery Policy', href: '/delivery-policy' },
-    { name: 'Returns', href: '/returns' }
+    { name: 'Legal Information', href: '/legal' },
+    { name: 'Terms & Privacy', href: '/legal' },
+    { name: 'Delivery Policy', href: '/legal' },
+    { name: 'Compliance', href: '/legal' }
   ];
 
   const productCategories = [
@@ -34,21 +34,21 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold text-red-500 mb-4">Kravings Club</h3>
             <p className="text-gray-300 mb-4">
-              Los Angeles&apos; premier cannabis delivery service. Premium products, fast delivery, 
-              and exceptional customer service.
+              Jaw-dropping Cannabis Deals Delivered. Premium cannabis products delivered 
+              directly to your door in 20-45 minutes.
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center text-gray-300">
                 <MapPinIcon className="h-4 w-4 mr-2" />
-                <span>18663 Ventura Blvd, Tarzana, CA 91356</span>
+                <span>Southern California Delivery</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <PhoneIcon className="h-4 w-4 mr-2" />
-                <span>(310) 933-8531</span>
+                <span>+1 (213) 531-5291</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <EnvelopeIcon className="h-4 w-4 mr-2" />
-                <span>[email protected]</span>
+                <span>info@kravings.club</span>
               </div>
             </div>
           </div>
@@ -111,23 +111,23 @@ export default function Footer() {
             <div>
               <h5 className="font-semibold text-white mb-2">Business Hours</h5>
               <div className="text-gray-300 text-sm">
-                <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
-                <p>Saturday: 10:00 AM - 4:00 PM</p>
-                <p>Sunday: Closed</p>
+                <p>Daily: 10:00 AM - 10:00 PM</p>
+                <p>Including Weekends</p>
+                <p>& Holidays</p>
               </div>
             </div>
             <div>
               <h5 className="font-semibold text-white mb-2">Delivery Info</h5>
               <div className="text-gray-300 text-sm">
                 <p>Delivery Time: 20-45 minutes</p>
-                <p>Minimum Order: $30</p>
-                <p>Free Delivery on $50+</p>
+                <p>Free Shipping Currently</p>
+                <p>Licensed Courier Delivery</p>
               </div>
             </div>
             <div>
               <h5 className="font-semibold text-white mb-2">License Info</h5>
               <div className="text-gray-300 text-sm">
-                <p>DCC State License: {process.env.NEXT_PUBLIC_LICENSE_NUMBER}</p>
+                <p>License: C9-000555-LIC</p>
                 <p>Adults 21+ Only</p>
                 <p>Valid ID Required</p>
               </div>
@@ -139,7 +139,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Kravings Club. All rights reserved.
+              © 2022 Kravings Club LLC. All rights reserved.
             </div>
             
             <div className="flex items-center space-x-4">
