@@ -13,20 +13,20 @@ export default function DeliveryPromise() {
     {
       icon: ClockIcon,
       title: 'Open Daily',
-      description: 'Monday-Friday 9am-8pm, Saturday 10am-4pm',
-      highlight: '6 days a week'
+      description: '10:00 AM to 10:00 PM daily, including weekends',
+      highlight: '7 days a week'
     },
     {
       icon: ShieldCheckIcon,
       title: 'Licensed & Safe',
-      description: 'Licensed cannabis delivery with secure packaging',
-      highlight: 'DCC Licensed'
+      description: 'California licensed delivery (C9-000555-LIC) with secure packaging',
+      highlight: 'CA Licensed'
     },
     {
       icon: StarIcon,
       title: 'Top Quality',
-      description: 'Premium brands like STIIIZY, CBX, and Jeeter',
-      highlight: '1,300+ products'
+      description: 'Premium cannabis products from trusted California brands',
+      highlight: '8 categories'
     }
   ];
 
@@ -65,7 +65,7 @@ export default function DeliveryPromise() {
               Ready to Order?
             </h3>
             <p className="text-white mb-6">
-              Get 30% off your first order when you sign up today!
+              Browse our full selection of premium cannabis products and start your order today!
             </p>
             <button className="bg-white text-red-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition duration-200">
               Start Shopping

@@ -9,18 +9,18 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Cannabis Deals & Delivery
-            <span className="block text-yellow-300">in 2025</span>
+            Jaw-dropping Cannabis Deals
+            <span className="block text-yellow-300">Delivered</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
-            30% OFF on all Kravings Flower! Shop 1,300+ cannabis products & top brands like STIIIZY, CBX, & Jeeter.
+            Premium cannabis products delivered directly to your door in 20-45 minutes. Southern California&apos;s trusted delivery service.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <div className="flex items-center text-white">
               <TruckIcon className="h-6 w-6 mr-2" />
-              <span className="font-medium">Free Delivery on $50+</span>
+              <span className="font-medium">Free Shipping Currently</span>
             </div>
             <div className="flex items-center text-white">
               <ClockIcon className="h-6 w-6 mr-2" />
@@ -40,16 +40,16 @@ export default function HeroSection() {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-300">1,300+</div>
-              <div className="text-lg">Cannabis Products</div>
+              <div className="text-3xl font-bold text-yellow-300">C9-000555-LIC</div>
+              <div className="text-lg">Licensed Delivery</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-300">30%</div>
-              <div className="text-lg">First-Time Discount</div>
+              <div className="text-3xl font-bold text-yellow-300">9</div>
+              <div className="text-lg">Cities Served</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-300">24/7</div>
-              <div className="text-lg">Customer Support</div>
+              <div className="text-3xl font-bold text-yellow-300">10AM-10PM</div>
+              <div className="text-lg">Daily Service</div>
             </div>
           </div>
         </div>

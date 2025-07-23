@@ -24,7 +24,7 @@ export default function CustomerReviews() {
       id: 3,
       name: 'Sarah M.',
       rating: 5,
-      text: 'First time customer and got 30% off! The ordering process was super easy and the delivery was right on time. Will definitely order again.',
+      text: 'First time customer and the ordering process was super easy and the delivery was right on time. Will definitely order again.',
       location: 'Long Beach',
       date: '3 days ago'
     },
@@ -60,9 +60,9 @@ export default function CustomerReviews() {
               <div className="text-gray-400 text-sm">Average Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400">1,000+</div>
-              <div className="text-white font-medium">Happy Customers</div>
-              <div className="text-gray-400 text-sm">And Growing</div>
+              <div className="text-3xl font-bold text-green-400">9</div>
+              <div className="text-white font-medium">Cities Served</div>
+              <div className="text-gray-400 text-sm">Southern California</div>
             </div>
           </div>
         </div>
@@ -112,9 +112,14 @@ export default function CustomerReviews() {
               Follow us on social media for the latest deals, new product drops, and cannabis education.
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-white text-gray-800 hover:bg-gray-100 font-medium py-2 px-6 rounded-lg transition duration-200">
-                Follow on Instagram
-              </button>
+              <a 
+                href="https://instagram.com/kravings_la" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-gray-800 hover:bg-gray-100 font-medium py-2 px-6 rounded-lg transition duration-200 inline-block"
+              >
+                Follow @kravings_la
+              </a>
               <button className="border-2 border-white text-white hover:bg-white hover:text-gray-800 font-medium py-2 px-6 rounded-lg transition duration-200">
                 Leave a Review
               </button>

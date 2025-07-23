@@ -4,18 +4,15 @@ import { MapPinIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
 export default function ServiceAreas() {
   const serviceAreas = [
-    { name: 'Los Angeles', deliveryFee: '$5', minOrder: '$30' },
-    { name: 'Lynwood', deliveryFee: '$5', minOrder: '$30' },
-    { name: 'South Gate', deliveryFee: '$5', minOrder: '$30' },
-    { name: 'Downey', deliveryFee: '$7.50', minOrder: '$35' },
-    { name: 'Long Beach', deliveryFee: '$7.50', minOrder: '$35' },
-    { name: 'South Bay', deliveryFee: '$7.50', minOrder: '$35' },
-    { name: 'Torrance', deliveryFee: '$10', minOrder: '$50' },
-    { name: 'Hawthorne', deliveryFee: '$7.50', minOrder: '$35' },
-    { name: 'Inglewood', deliveryFee: '$7.50', minOrder: '$35' },
-    { name: 'Cerritos', deliveryFee: '$7.50', minOrder: '$35' },
-    { name: 'Los Alamitos', deliveryFee: '$10', minOrder: '$50' },
-    { name: 'Tarzana', deliveryFee: '$10', minOrder: '$50' }
+    { name: 'Los Angeles', deliveryFee: 'FREE', time: '25-45 min' },
+    { name: 'Lynwood', deliveryFee: 'FREE', time: '20-30 min' },
+    { name: 'South Gate', deliveryFee: 'FREE', time: '25-35 min' },
+    { name: 'Downey', deliveryFee: 'FREE', time: '30-40 min' },
+    { name: 'Long Beach', deliveryFee: 'FREE', time: '35-45 min' },
+    { name: 'South Bay', deliveryFee: 'FREE', time: '30-40 min' },
+    { name: 'Torrance', deliveryFee: 'FREE', time: '30-40 min' },
+    { name: 'Hawthorne', deliveryFee: 'FREE', time: '25-35 min' },
+    { name: 'Inglewood', deliveryFee: 'FREE', time: '20-30 min' }
   ];
 
   return (
@@ -44,8 +41,8 @@ export default function ServiceAreas() {
                   <span className="text-green-400 font-medium">{area.deliveryFee}</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
-                  <span>Min Order:</span>
-                  <span className="text-yellow-400 font-medium">{area.minOrder}</span>
+                  <span>Delivery Time:</span>
+                  <span className="text-yellow-400 font-medium">{area.time}</span>
                 </div>
               </div>
             </div>
@@ -70,17 +67,17 @@ export default function ServiceAreas() {
           <div className="bg-gray-900 rounded-lg p-6">
             <div className="text-2xl font-bold text-green-400 mb-2">20-45</div>
             <div className="text-white font-medium mb-1">Minutes</div>
-            <div className="text-gray-400 text-sm">Average delivery time</div>
+            <div className="text-gray-400 text-sm">Delivery window</div>
           </div>
           <div className="bg-gray-900 rounded-lg p-6">
-            <div className="text-2xl font-bold text-yellow-400 mb-2">$30</div>
-            <div className="text-white font-medium mb-1">Minimum</div>
-            <div className="text-gray-400 text-sm">Order for delivery</div>
+            <div className="text-2xl font-bold text-yellow-400 mb-2">10AM-10PM</div>
+            <div className="text-white font-medium mb-1">Daily</div>
+            <div className="text-gray-400 text-sm">Operating hours</div>
           </div>
           <div className="bg-gray-900 rounded-lg p-6">
             <div className="text-2xl font-bold text-red-400 mb-2">FREE</div>
-            <div className="text-white font-medium mb-1">Delivery</div>
-            <div className="text-gray-400 text-sm">On orders over $50</div>
+            <div className="text-white font-medium mb-1">Shipping</div>
+            <div className="text-gray-400 text-sm">Currently offered</div>
           </div>
         </div>
       </div>
