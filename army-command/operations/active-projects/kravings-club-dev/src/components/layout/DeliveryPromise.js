@@ -65,7 +65,7 @@ export default function DeliveryPromise() {
               Ready to Order?
             </h3>
             <p className="text-white mb-6">
-              Browse our full selection of premium cannabis products and start your order today!
+              Get 30% off featured products when you order today! Browse our full selection of premium cannabis.
             </p>
             <button className="bg-white text-red-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition duration-200">
               Start Shopping

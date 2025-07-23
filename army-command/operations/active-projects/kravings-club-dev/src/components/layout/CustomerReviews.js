@@ -24,7 +24,7 @@ export default function CustomerReviews() {
       id: 3,
       name: 'Sarah M.',
       rating: 5,
-      text: 'First time customer and the ordering process was super easy and the delivery was right on time. Will definitely order again.',
+      text: 'First time customer and got 30% off featured products! The ordering process was super easy and the delivery was right on time. Will definitely order again.',
       location: 'Long Beach',
       date: '3 days ago'
     },

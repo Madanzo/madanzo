@@ -14,7 +14,7 @@ export default function HeroSection() {
           </h1>
           
           <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
-            Premium cannabis products delivered directly to your door in 20-45 minutes. Southern California&apos;s trusted delivery service.
+            30% OFF on featured products! Premium cannabis delivered directly to your door in 20-45 minutes. Southern California&apos;s trusted delivery service.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -40,16 +40,16 @@ export default function HeroSection() {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-300">C9-000555-LIC</div>
-              <div className="text-lg">Licensed Delivery</div>
+              <div className="text-3xl font-bold text-yellow-300">30%</div>
+              <div className="text-lg">OFF Featured Products</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-300">9</div>
               <div className="text-lg">Cities Served</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-300">10AM-10PM</div>
-              <div className="text-lg">Daily Service</div>
+              <div className="text-3xl font-bold text-yellow-300">20-45min</div>
+              <div className="text-lg">Fast Delivery</div>
             </div>
           </div>
         </div>
