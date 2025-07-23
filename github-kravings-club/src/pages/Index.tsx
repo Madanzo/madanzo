@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import AgeVerification from '@/components/AgeVerification';
 
 const Index = () => {
+  // Updated for Vercel deployment test
   const [showAgeVerification, setShowAgeVerification] = useState(true);
 
   useEffect(() => {
