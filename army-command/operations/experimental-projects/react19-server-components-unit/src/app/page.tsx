@@ -3,7 +3,16 @@ import { Suspense } from 'react';
 // Server Component - runs on the server
 async function ArmyStats() {
   // Simulate fetching army statistics from a database
-  const armyData = await new Promise(resolve => 
+  interface ArmyData {
+    totalUnits: number;
+    activeProjects: number;
+    experimentalProjects: number;
+    securityVulnerabilities: number;
+    performanceScore: number;
+    lastDeployment: string;
+  }
+  
+  const armyData = await new Promise<ArmyData>(resolve => 
     setTimeout(() => resolve({
       totalUnits: 6,
       activeProjects: 3,
@@ -19,23 +28,23 @@ async function ArmyStats() {
       <h2 className="text-2xl font-bold mb-4">🎖️ Madanzo Digital Army Stats</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div className="bg-white/10 p-4 rounded">
-          <div className="text-3xl font-bold">{(armyData as any).totalUnits}</div>
+          <div className="text-3xl font-bold">{armyData.totalUnits}</div>
           <div className="text-sm opacity-80">Total Units</div>
         </div>
         <div className="bg-white/10 p-4 rounded">
-          <div className="text-3xl font-bold">{(armyData as any).activeProjects}</div>
+          <div className="text-3xl font-bold">{armyData.activeProjects}</div>
           <div className="text-sm opacity-80">Active Projects</div>
         </div>
         <div className="bg-white/10 p-4 rounded">
-          <div className="text-3xl font-bold text-green-400">{(armyData as any).securityVulnerabilities}</div>
+          <div className="text-3xl font-bold text-green-400">{armyData.securityVulnerabilities}</div>
           <div className="text-sm opacity-80">Security Issues</div>
         </div>
         <div className="bg-white/10 p-4 rounded">
-          <div className="text-3xl font-bold text-yellow-400">{(armyData as any).performanceScore}%</div>
+          <div className="text-3xl font-bold text-yellow-400">{armyData.performanceScore}%</div>
           <div className="text-sm opacity-80">Performance</div>
         </div>
         <div className="bg-white/10 p-4 rounded col-span-2">
-          <div className="text-lg font-bold">{(armyData as any).lastDeployment}</div>
+          <div className="text-lg font-bold">{armyData.lastDeployment}</div>
           <div className="text-sm opacity-80">Last Training Exercise</div>
         </div>
       </div>
