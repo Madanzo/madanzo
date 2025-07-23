@@ -49,7 +49,7 @@ The repository has been transformed from chaotic project scattered across multip
 # Navigate to army operations
 cd army-command/operations/active-projects/
 
-# Nenes del Perreo (Production)
+# Nenes del Perreo (Production React CRA)
 cd nenes-del-perreo
 npm install                 # Install dependencies
 npm start                   # Start development server (http://localhost:3000)
@@ -61,17 +61,29 @@ npm run deploy             # Deploy to GitHub Pages
 cd kravings-club-delivery-now
 npm install && npm start   # Development server
 
-# Kravings Club Dev (Next.js)
+# Kravings Club Dev (Next.js 14)
 cd kravings-club-dev
 npm install                 # Install dependencies
 npm run dev                 # Start dev server (http://localhost:3000)
 npm run build               # Production build
 npm run start               # Production server
+npm run lint                # Run ESLint
+```
+
+#### **External Projects** (Outside Army Structure)
+```bash
+# GitHub Kravings Club (Vite + TypeScript + ShadCN)
+cd github-kravings-club
+npm install                  # Install dependencies  
+npm run dev                  # Start dev server (http://localhost:5173)
+npm run build               # Production build
+npm run preview             # Preview production build
+npm run lint                # Run ESLint
 ```
 
 **Live URLs:**
 - **Nenes del Perreo**: https://madanzo.github.io/nenes-del-perreo/
-- **Development**: http://localhost:3000 (when running projects)
+- **Development**: http://localhost:3000 (Next.js projects) or http://localhost:5173 (Vite projects)
 
 #### **Experimental Projects** (Development & Testing)
 ```bash
@@ -81,14 +93,21 @@ cd army-command/operations/experimental-projects/
 # Vite + TypeScript variants
 cd nenes-del-perreo-check   # ShadCN UI version
 cd perreo-texas-vibes       # Basic Vite version  
-cd perreo-texas-vibes-main  # Extended Vite version
+cd perreo-texas-vibes-main  # Extended Vite version with full ShadCN UI
+cd react19-server-components-unit  # Next.js 15 + React 19 experimental
 
-# Common Vite commands
+# Common Vite commands (for Vite projects)
 npm install                  # Install dependencies
 npm run dev                  # Start dev server (http://localhost:5173)
 npm run build               # TypeScript check + production build
 npm run preview             # Preview production build
 npm run lint                # Run ESLint
+
+# Next.js experimental commands (react19-server-components-unit)
+npm run dev                  # Start dev server (http://localhost:3000)
+npm run build               # Production build
+npm run start               # Production server
+npm run lint                # Run Next.js ESLint
 ```
 
 #### **Army Intelligence & Documentation**
@@ -153,10 +172,26 @@ git add . --exclude=node_modules --exclude=build
 **Status**: 🆕 NEXT.JS MODERNIZATION
 
 **Architecture**:
-- **Framework**: Next.js 14 with TypeScript
-- **State Management**: Zustand for cart and app state
+- **Framework**: Next.js 14 with JavaScript (App Router)
 - **Styling**: Tailwind CSS for utility-first design
-- **Features**: Modern architecture, optimized performance, enhanced UX
+- **State Management**: Zustand for cart management
+- **UI Components**: Headless UI and Heroicons
+- **API**: Axios for HTTP requests
+- **Features**: Cannabis delivery platform with age verification, cart system
+
+### **4. GitHub Kravings Club** - Advanced Vite Implementation
+**Location**: `github-kravings-club/`
+**Status**: 🧪 VITE + TYPESCRIPT + SHADCN
+
+**Architecture**:
+- **Framework**: Vite with TypeScript + React 18
+- **UI Library**: ShadCN UI (Radix UI primitives)
+- **Styling**: Tailwind CSS with animations
+- **Forms**: React Hook Form with Zod validation
+- **Routing**: React Router v6
+- **Data Fetching**: TanStack React Query
+- **Charts**: Recharts for analytics
+- **Features**: Complete cannabis e-commerce platform with advanced UI components
 
 ## Development Workflow
 
@@ -198,11 +233,21 @@ git add . --exclude=node_modules --exclude=build
 - **Framework**: React 18/19
 - **Styling**: Tailwind CSS for utility-first styling
 - **UI Components**: 
-  - ShadCN UI (nenes-del-perreo-check) - Radix UI primitives + Tailwind
+  - ShadCN UI (nenes-del-perreo-check, perreo-texas-vibes-main, github-kravings-club) - Radix UI primitives + Tailwind
   - Custom components with Radix UI (perreo-texas-vibes variants)
-- **Forms**: React Hook Form for form validation
+- **Forms**: React Hook Form for form validation with Zod schema validation
+- **Data Fetching**: TanStack React Query for server state management
 - **Charts**: Recharts for data visualization
 - **Icons**: Lucide React for consistent iconography
+- **Animations**: Tailwind CSS animations and class-variance-authority for component variants
+
+### Next.js React 19 Experimental Architecture
+**Latest Tech (react19-server-components-unit):**
+- **Framework**: Next.js 15 with TypeScript
+- **React Version**: React 19 (experimental with Server Components)
+- **Styling**: Tailwind CSS v4 (experimental)
+- **Build Tool**: Next.js with SWC compiler
+- **Features**: Server Components, concurrent features, enhanced performance
 
 ## 🏰 Army Command Directory Structure
 
@@ -213,6 +258,15 @@ git add . --exclude=node_modules --exclude=build
 ├── README.md                   # GitHub profile display (public-facing)
 ├── CLAUDE.md                  # This file - guidance for Claude Code
 ├── .gitignore                 # Git exclusion rules
+│
+├── 🌐 github-kravings-club/   # EXTERNAL PROJECT (Vite + TypeScript + ShadCN)
+│   ├── src/components/ui/     # Complete ShadCN UI components library
+│   ├── src/pages/             # Route components (Menu, About, FAQ, etc.)
+│   ├── src/hooks/             # Custom React hooks (use-mobile, use-toast)
+│   ├── lib/utils.ts           # Utility functions
+│   ├── tailwind.config.ts     # Tailwind configuration
+│   ├── components.json        # ShadCN configuration
+│   └── vercel.json            # Vercel deployment config
 │
 └── 🏰 army-command/           # MILITARY COMMAND CENTER
     │
@@ -273,8 +327,15 @@ git add . --exclude=node_modules --exclude=build
         │   ├── perreo-texas-vibes/     # Basic Vite variant
         │   │   └── src/components/     # Custom React components
         │   │
-        │   └── perreo-texas-vibes-main/ # Extended Vite + UI library
-        │       └── src/                 # Extended implementation
+        │   ├── perreo-texas-vibes-main/ # Extended Vite + Full ShadCN UI
+        │   │   ├── src/components/ui/  # Complete ShadCN UI library
+        │   │   ├── src/hooks/          # Custom React hooks
+        │   │   ├── lib/utils.ts        # Utility functions
+        │   │   └── components.json     # ShadCN configuration
+        │   │
+        │   └── react19-server-components-unit/ # Next.js 15 + React 19
+        │       ├── src/app/            # App Router structure
+        │       └── tsconfig.json       # TypeScript configuration
         │
         └── 📦 archived-projects/      # Historical & Obsolete
             ├── kravings-club-repo/    # Duplicate repository (archived)
@@ -292,9 +353,20 @@ git add . --exclude=node_modules --exclude=build
 
 ### React Application Testing
 ```bash
-cd projects/nenes-del-perreo
+# React CRA projects (with Jest built-in)
+cd army-command/operations/active-projects/nenes-del-perreo
 npm test                        # Run Jest test suite
 npm test -- --coverage         # Run tests with coverage report
+
+# Vite + TypeScript projects (ESLint for code quality)
+cd army-command/operations/experimental-projects/perreo-texas-vibes-main
+npm run lint                    # Run ESLint
+npm run build                   # TypeScript type checking during build
+
+# Next.js projects
+cd army-command/operations/active-projects/kravings-club-dev
+npm run lint                    # Run Next.js ESLint
+npm run build                   # Build with type checking
 ```
 
 ### Mobile Responsiveness Testing
@@ -310,6 +382,38 @@ npm start  # Start dev server
 # Verify touch targets
 # All interactive elements should be minimum 44px for mobile accessibility
 ```
+
+## Code Architecture Patterns
+
+### ShadCN UI Component System
+**Projects using ShadCN UI**: `github-kravings-club`, `perreo-texas-vibes-main`, `nenes-del-perreo-check`
+
+**Key Patterns:**
+- Components located in `src/components/ui/` directory
+- Utility functions in `lib/utils.ts` with `cn()` for className merging
+- Uses `class-variance-authority` for component variants
+- Radix UI primitives as foundation (headless, accessible)
+- Configured via `components.json` file
+- TypeScript interfaces for prop types
+
+**Common ShadCN Components Available:**
+- Form controls: Button, Input, Select, Checkbox, Radio Group
+- Layout: Card, Sheet, Dialog, Accordion, Tabs
+- Data display: Table, Badge, Avatar, Progress
+- Navigation: Command, Dropdown Menu, Navigation Menu
+- Feedback: Toast, Alert, Skeleton
+
+### State Management Patterns
+- **React CRA Projects**: useState, useEffect for local state
+- **Next.js Projects**: Zustand for global state (cart, user state)
+- **Vite TypeScript Projects**: TanStack React Query for server state
+- **Forms**: React Hook Form with Zod validation schemas
+
+### Styling Architecture
+- **Tailwind CSS**: All projects use utility-first approach
+- **Mobile-first**: Responsive breakpoints (sm:, md:, lg:, xl:)
+- **Dark mode support**: next-themes in advanced projects
+- **Animations**: tailwindcss-animate for smooth transitions
 
 ## Important Development Notes
 
@@ -382,8 +486,18 @@ If the MCP Docker service fails with timeout errors when pulling images:
 For detailed troubleshooting, see: `army-command/command-center/documentation/technical-docs/DOCKER_MCP_TROUBLESHOOTING.md`
 
 ### System Requirements
-- Node.js v18+ for React development
-- PostgreSQL 13+ for database operations
-- Python 3.8+ for analytics scripts
-- Git for version control
-- Docker Desktop (for MCP Docker services)
+- **Node.js v18+** for React development (v20+ recommended for Next.js 15)
+- **npm or yarn** for package management
+- **TypeScript** knowledge for Vite projects
+- **Git** for version control
+- **Docker Desktop** (for MCP Docker services)
+- **Modern browser** with dev tools for testing responsive design
+
+### Development Environment
+- **VS Code** recommended with extensions:
+  - ES7+ React/Redux/React-Native snippets
+  - Tailwind CSS IntelliSense
+  - TypeScript Importer
+  - ESLint + Prettier
+- **Chrome DevTools** for mobile responsiveness testing
+- **Postman** or similar for API testing (WordPress REST API)
