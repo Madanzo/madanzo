@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold text-red-500 mb-4">Kravings Club</h3>
             <p className="text-gray-300 mb-4">
-              Los Angeles' premier cannabis delivery service. Premium products, fast delivery, 
+              Los Angeles&apos; premier cannabis delivery service. Premium products, fast delivery, 
               and exceptional customer service.
             </p>
             <div className="space-y-2 text-sm">

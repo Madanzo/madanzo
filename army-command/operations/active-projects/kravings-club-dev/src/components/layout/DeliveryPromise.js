@@ -38,7 +38,7 @@ export default function DeliveryPromise() {
             Why Choose Kravings Club?
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            We're committed to providing the fastest, safest, and most convenient cannabis delivery experience in Los Angeles.
+            We&apos;re committed to providing the fastest, safest, and most convenient cannabis delivery experience in Los Angeles.
           </p>
         </div>
 

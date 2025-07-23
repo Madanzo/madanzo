@@ -87,11 +87,9 @@ export default function Cart() {
                               {items.map((item) => (
                                 <li key={item.id} className="flex py-6">
                                   <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                    <img
-                                      src={item.image || '/api/placeholder/100/100'}
-                                      alt={item.name}
-                                      className="h-full w-full object-cover object-center"
-                                    />
+                                    <div className="h-full w-full bg-gray-200 flex items-center justify-center">
+                                      <span className="text-gray-500 text-xs">Image</span>
+                                    </div>
                                   </div>
 
                                   <div className="ml-4 flex flex-1 flex-col">

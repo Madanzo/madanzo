@@ -55,10 +55,10 @@ export default function ServiceAreas() {
         <div className="mt-12 text-center">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-white mb-3">
-              Don't see your area?
+              Don&apos;t see your area?
             </h3>
             <p className="text-white mb-4">
-              We're expanding our delivery zones! Contact us to see if we can deliver to your location.
+              We&apos;re expanding our delivery zones! Contact us to see if we can deliver to your location.
             </p>
             <button className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-2 px-6 rounded-lg transition duration-200">
               Contact Us

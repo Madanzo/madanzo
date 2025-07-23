@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import { PlusIcon, StarIcon } from '@heroicons/react/24/outline';
 import { useCartStore } from '@/lib/cart';
-import { wp } from '@/lib/wordpress';
 
 export default function ProductGrid() {
+  // State management for products, loading, and category filtering
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -19,55 +19,55 @@ export default function ProductGrid() {
     { id: 'concentrates', name: 'Concentrates' }
   ];
 
-  // Sample products (replace with WordPress API data)
-  const sampleProducts = [
-    {
-      id: 1,
-      name: 'Girl Scout Cookies',
-      category: 'flower',
-      price: 45,
-      thc: 22.5,
-      type: 'Hybrid',
-      image: '/api/placeholder/300/300',
-      rating: 4.8,
-      reviews: 124
-    },
-    {
-      id: 2,
-      name: 'Blue Dream',
-      category: 'flower',
-      price: 40,
-      thc: 18.2,
-      type: 'Sativa',
-      image: '/api/placeholder/300/300',
-      rating: 4.7,
-      reviews: 89
-    },
-    {
-      id: 3,
-      name: 'Sour Gummies',
-      category: 'edibles',
-      price: 25,
-      thc: 10,
-      type: 'Edible',
-      image: '/api/placeholder/300/300',
-      rating: 4.9,
-      reviews: 156
-    },
-    {
-      id: 4,
-      name: 'Live Resin Cart',
-      category: 'vapes',
-      price: 55,
-      thc: 85.4,
-      type: 'Vape',
-      image: '/api/placeholder/300/300',
-      rating: 4.6,
-      reviews: 78
-    }
-  ];
-
   useEffect(() => {
+    // Sample products (replace with WordPress API data)
+    const sampleProducts = [
+      {
+        id: 1,
+        name: 'Girl Scout Cookies',
+        category: 'flower',
+        price: 45,
+        thc: 22.5,
+        type: 'Hybrid',
+        image: '/api/placeholder/300/300',
+        rating: 4.8,
+        reviews: 124
+      },
+      {
+        id: 2,
+        name: 'Blue Dream',
+        category: 'flower',
+        price: 40,
+        thc: 18.2,
+        type: 'Sativa',
+        image: '/api/placeholder/300/300',
+        rating: 4.7,
+        reviews: 89
+      },
+      {
+        id: 3,
+        name: 'Sour Gummies',
+        category: 'edibles',
+        price: 25,
+        thc: 10,
+        type: 'Edible',
+        image: '/api/placeholder/300/300',
+        rating: 4.9,
+        reviews: 156
+      },
+      {
+        id: 4,
+        name: 'Live Resin Cart',
+        category: 'vapes',
+        price: 55,
+        thc: 85.4,
+        type: 'Vape',
+        image: '/api/placeholder/300/300',
+        rating: 4.6,
+        reviews: 78
+      }
+    ];
+
     // Simulate loading products
     setTimeout(() => {
       setProducts(sampleProducts);
@@ -83,6 +83,7 @@ export default function ProductGrid() {
     addItem(product);
   };
 
+  // Loading state with skeleton UI
   if (loading) {
     return (
       <div className="py-16 bg-gray-800">
@@ -105,6 +106,7 @@ export default function ProductGrid() {
     );
   }
 
+  // Main product grid component
   return (
     <div className="py-16 bg-gray-800">
       <div className="max-w-7xl mx-auto px-4">
@@ -112,7 +114,7 @@ export default function ProductGrid() {
           <h2 className="text-3xl font-bold text-white mb-4">Featured Products</h2>
           <p className="text-gray-300 mb-8">Premium cannabis products from top brands</p>
           
-          {/* Category Filter */}
+          {/* Category filter buttons */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {categories.map((category) => (
               <button
@@ -130,15 +132,15 @@ export default function ProductGrid() {
           </div>
         </div>
 
+        {/* Product cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
             <div key={product.id} className="bg-gray-900 rounded-lg overflow-hidden shadow-xl hover:transform hover:scale-105 transition duration-300">
+              {/* Product image and badges */}
               <div className="relative">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-48 object-cover"
-                />
+                <div className="w-full h-48 bg-gray-600 flex items-center justify-center">
+                  <span className="text-gray-400">Product Image</span>
+                </div>
                 <div className="absolute top-4 left-4">
                   <span className="bg-red-500 text-white px-2 py-1 rounded text-sm font-medium">
                     {product.thc}% THC
@@ -151,6 +153,7 @@ export default function ProductGrid() {
                 </div>
               </div>
               
+              {/* Product details and actions */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{product.name}</h3>
                 
@@ -188,6 +191,7 @@ export default function ProductGrid() {
           ))}
         </div>
 
+        {/* View all products button */}
         <div className="text-center mt-12">
           <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition duration-200">
             View All Products

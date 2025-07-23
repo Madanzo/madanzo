@@ -31,7 +31,7 @@ The repository has been transformed from chaotic project scattered across multip
 ### **EFFICIENCY GAINS ACHIEVED**
 - **70% size reduction**: From 1.6GB to 480MB through consolidation
 - **Documentation centralization**: 25+ scattered files → organized hierarchy
-- **Project rationalization**: 7 duplicate projects → 3 active + experiments
+- **Project rationalization**: 7 duplicate projects → 2 active + experiments
 - **Professional presentation**: Military-grade organization for GitHub profile
 
 ### Profile Display System
@@ -48,14 +48,6 @@ The repository has been transformed from chaotic project scattered across multip
 ```bash
 # Navigate to army operations
 cd army-command/operations/active-projects/
-
-# Nenes del Perreo (Production React CRA)
-cd nenes-del-perreo
-npm install                 # Install dependencies
-npm start                   # Start development server (http://localhost:3000)
-npm run build              # Build for production
-npm test                   # Run Jest test suite
-npm run deploy             # Deploy to GitHub Pages
 
 # Kravings Club Delivery (React CRA)
 cd kravings-club-delivery-now
@@ -82,7 +74,6 @@ npm run lint                # Run ESLint
 ```
 
 **Live URLs:**
-- **Nenes del Perreo**: https://madanzo.github.io/nenes-del-perreo/
 - **Development**: http://localhost:3000 (Next.js projects) or http://localhost:5173 (Vite projects)
 
 #### **Experimental Projects** (Development & Testing)
@@ -91,7 +82,6 @@ npm run lint                # Run ESLint
 cd army-command/operations/experimental-projects/
 
 # Vite + TypeScript variants
-cd nenes-del-perreo-check   # ShadCN UI version
 cd perreo-texas-vibes       # Basic Vite version  
 cd perreo-texas-vibes-main  # Extended Vite version with full ShadCN UI
 cd react19-server-components-unit  # Next.js 15 + React 19 experimental
@@ -128,36 +118,19 @@ cat strategic-plans/CURRENT_STATUS_OVERVIEW.md
 ### Git Repository Management
 ```bash
 # Army-organized repository structure
-git add army-command/operations/active-projects/nenes-del-perreo/src/
-git add army-command/operations/active-projects/nenes-del-perreo/package.json
+git add army-command/operations/active-projects/kravings-club-dev/src/
+git add army-command/operations/active-projects/kravings-club-dev/package.json
 git commit -m "Update: [description of changes]"
 git push origin main
 
 # Working with active projects
-cd army-command/operations/active-projects/nenes-del-perreo
+cd army-command/operations/active-projects/kravings-club-dev
 git add . --exclude=node_modules --exclude=build
 ```
 
 ## 🚀 Current Active Projects
 
-### **1. Nenes del Perreo** - Production Music Showcase
-**Location**: `army-command/operations/active-projects/nenes-del-perreo/`
-**Status**: ✅ LIVE - https://madanzo.github.io/nenes-del-perreo/
-
-**Architecture**:
-- **Framework**: React 18 with Create React App
-- **Routing**: React Router v6 with HashRouter (required for GitHub Pages)
-- **Styling**: Custom CSS with mobile-first responsive design
-- **State Management**: React useState for mobile menu functionality
-- **Deployment**: GitHub Pages with automated deployment via gh-pages package
-
-**Mobile-First Design**:
-- Responsive Navigation: Hamburger menu for mobile devices (≤480px)
-- Touch Optimization: 44px minimum touch targets following accessibility guidelines
-- Breakpoint Strategy: 768px (tablet), 480px (mobile), 320px (small mobile)
-- Performance: CSS transforms and backdrop-filter for smooth animations
-
-### **2. Kravings Club Delivery** - Cannabis E-commerce Platform
+### **1. Kravings Club Delivery** - Cannabis E-commerce Platform
 **Location**: `army-command/operations/active-projects/kravings-club-delivery-now/`
 **Status**: 🔧 DEVELOPMENT
 
@@ -167,7 +140,7 @@ git add . --exclude=node_modules --exclude=build
 - **Features**: Age verification, cart system, delivery tracking
 - **Compliance**: California cannabis regulations (License: C9-000555-LIC)
 
-### **3. Kravings Club Dev** - Modern Next.js Implementation  
+### **2. Kravings Club Dev** - Modern Next.js Implementation  
 **Location**: `army-command/operations/active-projects/kravings-club-dev/`
 **Status**: 🆕 NEXT.JS MODERNIZATION
 
@@ -179,7 +152,7 @@ git add . --exclude=node_modules --exclude=build
 - **API**: Axios for HTTP requests
 - **Features**: Cannabis delivery platform with age verification, cart system
 
-### **4. GitHub Kravings Club** - Advanced Vite Implementation
+### **3. GitHub Kravings Club** - Advanced Vite Implementation
 **Location**: `github-kravings-club/`
 **Status**: 🧪 VITE + TYPESCRIPT + SHADCN
 
@@ -197,7 +170,7 @@ git add . --exclude=node_modules --exclude=build
 
 ### **Army Development Process**
 1. **Navigate to Operations**: `cd army-command/operations/active-projects/`
-2. **Choose Project**: Select from nenes-del-perreo, kravings-club-delivery-now, or kravings-club-dev
+2. **Choose Project**: Select from kravings-club-delivery-now or kravings-club-dev
 3. **Start Development**: `npm start` or `npm run dev` (depending on project)
 4. **Code Changes**: Edit files in project's `src/` directory
 5. **Test & Build**: Run appropriate build commands
@@ -233,7 +206,7 @@ git add . --exclude=node_modules --exclude=build
 - **Framework**: React 18/19
 - **Styling**: Tailwind CSS for utility-first styling
 - **UI Components**: 
-  - ShadCN UI (nenes-del-perreo-check, perreo-texas-vibes-main, github-kravings-club) - Radix UI primitives + Tailwind
+  - ShadCN UI (perreo-texas-vibes-main, github-kravings-club) - Radix UI primitives + Tailwind
   - Custom components with Radix UI (perreo-texas-vibes variants)
 - **Forms**: React Hook Form for form validation with Zod schema validation
 - **Data Fetching**: TanStack React Query for server state management
@@ -301,7 +274,6 @@ git add . --exclude=node_modules --exclude=build
     └── ⚔️ operations/         # Active Military Operations
         │
         ├── 🚀 active-projects/   # Production-Ready Deployments
-        │   ├── nenes-del-perreo/ # React music showcase (PRODUCTION)
         │   │   ├── package.json  # React 18, React Router v6, gh-pages
         │   │   ├── public/       # Static assets and index.html
         │   │   ├── src/          # React source code
@@ -319,11 +291,6 @@ git add . --exclude=node_modules --exclude=build
         │       └── package.json  # Next.js 14, Zustand, Tailwind
         │
         ├── 🧪 experimental-projects/ # Development & Testing
-        │   ├── nenes-del-perreo-check/ # Vite + TypeScript + ShadCN UI
-        │   │   ├── src/components/ui/  # ShadCN UI components
-        │   │   ├── lib/utils.ts        # Utility functions
-        │   │   └── tailwind.config.js  # Tailwind configuration
-        │   │
         │   ├── perreo-texas-vibes/     # Basic Vite variant
         │   │   └── src/components/     # Custom React components
         │   │
@@ -353,11 +320,6 @@ git add . --exclude=node_modules --exclude=build
 
 ### React Application Testing
 ```bash
-# React CRA projects (with Jest built-in)
-cd army-command/operations/active-projects/nenes-del-perreo
-npm test                        # Run Jest test suite
-npm test -- --coverage         # Run tests with coverage report
-
 # Vite + TypeScript projects (ESLint for code quality)
 cd army-command/operations/experimental-projects/perreo-texas-vibes-main
 npm run lint                    # Run ESLint
@@ -386,7 +348,7 @@ npm start  # Start dev server
 ## Code Architecture Patterns
 
 ### ShadCN UI Component System
-**Projects using ShadCN UI**: `github-kravings-club`, `perreo-texas-vibes-main`, `nenes-del-perreo-check`
+**Projects using ShadCN UI**: `github-kravings-club`, `perreo-texas-vibes-main`
 
 **Key Patterns:**
 - Components located in `src/components/ui/` directory

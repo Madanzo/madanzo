@@ -85,7 +85,7 @@ export default function CustomerReviews() {
               </div>
               
               <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                "{review.text}"
+                &ldquo;{review.text}&rdquo;
               </p>
               
               <div className="flex items-center justify-between">
