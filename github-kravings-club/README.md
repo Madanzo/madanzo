@@ -1,6 +1,8 @@
-# Kravings Club - Cannabis Delivery Platform
+# Kravings Club - Vite + React + TypeScript
 
-A modern cannabis delivery service operating in Southern California, with both production website documentation and development resources.
+Modern cannabis e-commerce platform built with **Vite**, React 18, TypeScript, and ShadCN UI.
+
+> **Framework**: This is a **Vite project**, not Next.js. The `src/pages/` directory contains React Router components.
 
 ## 🌿 Production Website Analysis
 

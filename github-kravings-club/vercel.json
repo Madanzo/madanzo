@@ -1,10 +1,17 @@
 {
   "version": 2,
   "name": "kravings-club",
+  "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "build",
-  "framework": "vite",
   "installCommand": "npm install",
+  "functions": {},
+  "env": {},
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
