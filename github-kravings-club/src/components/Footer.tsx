@@ -26,7 +26,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-400">
               <li><Link to="/menu" className="hover:text-pink-400 transition-colors">Shop Menu</Link></li>
-              <li><Link to="/delivery" className="hover:text-pink-400 transition-colors">Delivery Info</Link></li>
+              {/* <li><Link to="/delivery" className="hover:text-pink-400 transition-colors">Delivery Info</Link></li> */}
               <li><Link to="/about" className="hover:text-pink-400 transition-colors">About Us</Link></li>
               <li><Link to="/contact" className="hover:text-pink-400 transition-colors">Contact</Link></li>
             </ul>
@@ -37,9 +37,9 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-gray-400">
               <li><Link to="/faq" className="hover:text-pink-400 transition-colors">FAQ</Link></li>
-              <li><Link to="/track-order" className="hover:text-pink-400 transition-colors">Track Order</Link></li>
-              <li><Link to="/returns" className="hover:text-pink-400 transition-colors">Returns</Link></li>
-              <li><Link to="/help" className="hover:text-pink-400 transition-colors">Help Center</Link></li>
+              {/* <li><Link to="/track-order" className="hover:text-pink-400 transition-colors">Track Order</Link></li> */}
+              {/* <li><Link to="/returns" className="hover:text-pink-400 transition-colors">Returns</Link></li> */}
+              {/* <li><Link to="/help" className="hover:text-pink-400 transition-colors">Help Center</Link></li> */}
             </ul>
           </div>
 
@@ -60,9 +60,9 @@ const Footer = () => {
               © 2024 Kravings Club. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-gray-500">
-              <Link to="/privacy" className="hover:text-pink-400 transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-pink-400 transition-colors">Terms of Service</Link>
-              <Link to="/compliance" className="hover:text-pink-400 transition-colors">Compliance</Link>
+              {/* <Link to="/privacy" className="hover:text-pink-400 transition-colors">Privacy Policy</Link> */}
+              {/* <Link to="/terms" className="hover:text-pink-400 transition-colors">Terms of Service</Link> */}
+              {/* <Link to="/compliance" className="hover:text-pink-400 transition-colors">Compliance</Link> */}
             </div>
           </div>
           <div className="text-center mt-6 text-xs text-gray-600">
