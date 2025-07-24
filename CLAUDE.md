@@ -6,6 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a GitHub Profile Repository (madanzo/madanzo) that serves as both a professional profile showcase and the **Madanzo Digital Army Command Center**. The repository has been completely reorganized into a military-grade structure that showcases expertise as a Full-Stack Developer, Digital Marketing Pioneer, and Creative Technologist while housing comprehensive business project documentation and fully functional applications.
 
+### Business Focus Areas
+- **Kravings Club**: Cannabis e-commerce platform with delivery services (California License: C9-000555-LIC)
+- **Merkad Agency**: Full-service digital marketing agency specializing in SEO, CRM automation, and WordPress development
+- **Nenes del Perreo**: Music production project blending reggaeton with Texas vibes
+
 ## 🏰 Army Command Architecture
 
 ### **NEW ORGANIZATIONAL STRUCTURE (Post-Army Reorganization)**
@@ -73,6 +78,14 @@ npm run preview             # Preview production build
 npm run lint                # Run ESLint
 ```
 
+### Running Tests
+
+#### Unit Tests
+```bash
+# Currently no test suites are configured
+# Future test commands will be added here
+```
+
 **Live URLs:**
 - **Development**: http://localhost:3000 (Next.js projects) or http://localhost:5173 (Vite projects)
 
@@ -125,7 +138,11 @@ git push origin main
 
 # Working with active projects
 cd army-command/operations/active-projects/kravings-club-dev
-git add . --exclude=node_modules --exclude=build
+git add . -- ':!node_modules' ':!build' ':!dist' ':!.next'
+
+# Check current branch and status
+git status
+git branch -a
 ```
 
 ## 🚀 Current Active Projects
@@ -171,17 +188,37 @@ git add . --exclude=node_modules --exclude=build
 ### **Army Development Process**
 1. **Navigate to Operations**: `cd army-command/operations/active-projects/`
 2. **Choose Project**: Select from kravings-club-delivery-now or kravings-club-dev
-3. **Start Development**: `npm start` or `npm run dev` (depending on project)
-4. **Code Changes**: Edit files in project's `src/` directory
-5. **Test & Build**: Run appropriate build commands
-6. **Deploy**: Use project-specific deployment commands
-7. **Update Intelligence**: Document changes in mission reports
+3. **Install Dependencies**: `npm install` (if not already installed)
+4. **Start Development**: `npm start` or `npm run dev` (depending on project)
+5. **Code Changes**: Edit files in project's `src/` directory
+6. **Lint Code**: `npm run lint` to check code quality
+7. **Test & Build**: Run appropriate build commands
+8. **Deploy**: Use project-specific deployment commands
+9. **Update Intelligence**: Document changes in mission reports
+
+### Environment Setup
+- Ensure Node.js v18+ is installed (v20+ for Next.js 15 projects)
+- Run `npm install` in project directory before starting development
+- For TypeScript projects, VS Code will provide IntelliSense automatically
 
 ### Profile Updates (README.md)
 1. Edit `README.md` for immediate profile changes
 2. Use dynamic GitHub stats APIs for live data
 3. Update tech stack badges when learning new technologies
 4. Maintain professional presentation while showcasing technical depth
+
+## High-Level Architecture
+
+### Multi-Framework Strategy
+The repository intentionally uses multiple frameworks to:
+1. **Compare performance**: Next.js vs Vite vs Create React App
+2. **Test new features**: React 19 Server Components, Tailwind CSS v4
+3. **Maintain flexibility**: Different deployment targets (Vercel, GitHub Pages, etc.)
+
+### API Integration Patterns
+- **WordPress REST API**: Used for product management in Kravings Club
+- **Custom Next.js API Routes**: For server-side operations
+- **External Services**: GoHighLevel CRM, Atlas SEO AI integration
 
 ## Key Technical Decisions
 
@@ -412,6 +449,21 @@ npm start  # Start dev server
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ```
 
+## Deployment
+
+### Vercel Deployment (Next.js Projects)
+```bash
+# Automatic deployment on push to main branch
+# Manual deployment:
+vercel --prod
+```
+
+### GitHub Pages (React Projects)
+```bash
+# Build and deploy to gh-pages branch
+npm run deploy
+```
+
 ## Troubleshooting
 
 ### Common Issues
@@ -463,3 +515,22 @@ For detailed troubleshooting, see: `army-command/command-center/documentation/te
   - ESLint + Prettier
 - **Chrome DevTools** for mobile responsiveness testing
 - **Postman** or similar for API testing (WordPress REST API)
+
+## Important Code Patterns
+
+### Component File Naming
+- React components: PascalCase (e.g., `MenuPage.jsx`, `CartProvider.js`)
+- Utility files: camelCase (e.g., `utils.ts`, `apiClient.js`)
+- Configuration: lowercase with dots (e.g., `tailwind.config.js`)
+
+### Import Organization
+1. External dependencies (React, Next.js, etc.)
+2. Internal components
+3. Utilities and helpers
+4. Styles and assets
+
+### State Management Guidelines
+- **Local state**: useState for component-specific state
+- **Global state**: Zustand stores in `/src/stores/`
+- **Server state**: TanStack Query for API data
+- **Form state**: React Hook Form with Zod validation
